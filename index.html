@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ZaperMaster // Proyectos</title>
-  <meta name="description" content="Portfolio de proyectos de ciberseguridad y desarrollo de ZaperMaster.">
+  <meta name="description" content="Portfolio de Alejandro Zapata (ZaperMaster): proyectos de ciberseguridad y desarrollo, como Lumen Office y WebAudit-Sec.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050a0e'/><path d='M8 10l6 6-6 6M16 22h8' stroke='%2300ff9c' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
@@ -221,9 +221,9 @@
         <h1 class="glitch" data-text="ZAPERMASTER">ZAPERMASTER</h1>
         <div class="role"><span id="typed"></span><span class="cursor">&nbsp;</span></div>
         <p class="intro">
-          Desarrollo herramientas de seguridad y aplicaciones web: auditoría de sitios, análisis de
-          cabeceras, TLS y DNS, y aplicaciones con Spring Boot, Python y Odoo. Aquí está todo lo que
-          tengo publicado en abierto.
+          Estudiante de ciberseguridad y desarrollador de software. Creo herramientas de seguridad y
+          aplicaciones completas, de la idea a la versión publicada: desde un auditor de seguridad web hasta
+          una suite ofimática para Windows. Aquí está todo lo que tengo publicado en abierto.
         </p>
         <div class="cta">
           <a class="btn" href="#proyectos">&gt; ver_proyectos</a>
@@ -261,7 +261,9 @@
         <span class="skill">DNS · SPF · DMARC</span><span class="skill">Reglas Sigma</span><span class="skill">Odoo</span>
         <span class="skill">Java</span><span class="skill">Spring Boot</span><span class="skill">Spring Security</span>
         <span class="skill">Thymeleaf</span><span class="skill">MySQL</span>
-        <span class="skill">C# / Unity</span><span class="skill">Photon PUN</span><span class="skill">Git</span><span class="skill">pytest</span>
+        <span class="skill">C# / Unity</span><span class="skill">Photon PUN</span>
+        <span class="skill">TypeScript</span><span class="skill">React</span><span class="skill">Tauri</span><span class="skill">Rust</span>
+        <span class="skill">Git</span><span class="skill">pytest</span><span class="skill">Vitest</span>
       </div>
     </section>
 
@@ -292,6 +294,12 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
 
     // Información extra de cada proyecto; los repos públicos nuevos aparecen solos con lo que diga GitHub
     const EXTRA = {
+      "lumen-office": {
+        type: "dev", icon: "✎", title: "Lumen Office",
+        description: "Suite ofimática de escritorio para Windows: documentos, hojas de cálculo y presentaciones compatibles con Word, Excel y PowerPoint, con notas y un asistente de IA que funciona sin conexión. Tauri, React y TypeScript.",
+        features: ["Documentos con comentarios, control de cambios y corrector", "Hojas con fórmulas, gráficos y tablas dinámicas", "Presentaciones con animaciones y vista del moderador", "Exporta a PDF y vídeo; abre y guarda Office", "Actualizaciones firmadas, activación propia e idiomas"],
+        languages: { TypeScript: 1138068, CSS: 30827, JavaScript: 28114, Rust: 4556, HTML: 361 }
+      },
       "WebAudit-Sec": {
         type: "sec", icon: "⛨",
         description: "Auditor de seguridad web: analiza una página o un sitio entero y explica cada hallazgo con su recomendación y su referencia OWASP. Versión web (FastAPI) y app de escritorio para Windows.",
@@ -317,13 +325,16 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
         languages: { Python: 6330 }
       }
     };
+    // Proyectos principales: siempre primero y en este orden
+    const ORDER = ["lumen-office", "webaudit-sec"];
     const FALLBACK = [
+      { name: "lumen-office", html_url: `https://github.com/${USER}/lumen-office`, language: "TypeScript", stargazers_count: 0, pushed_at: "2026-11-02T13:00:00Z", homepage: "https://zapermaster.github.io/lumen-office/" },
       { name: "Hexagonia", html_url: `https://github.com/${USER}/Hexagonia`, language: "C#", stargazers_count: 0, pushed_at: "2026-10-26T13:20:47Z", homepage: "" },
       { name: "GestionAulas", html_url: `https://github.com/${USER}/GestionAulas`, language: "HTML", stargazers_count: 0, pushed_at: "2026-10-26T10:58:24Z", homepage: "" },
       { name: "WebAudit-Sec", html_url: `https://github.com/${USER}/WebAudit-Sec`, language: "Python", stargazers_count: 0, pushed_at: "2026-10-23T13:34:54Z", homepage: "" },
       { name: "Libroman", html_url: `https://github.com/${USER}/Libroman`, language: "Python", stargazers_count: 1, pushed_at: "2026-10-26T09:46:56Z", homepage: "" }
     ];
-    const COLORS = { Python: "#3572A5", JavaScript: "#f1e05a", CSS: "#663399", HTML: "#e34c26", Java: "#b07219", "C#": "#178600", ShaderLab: "#222c37", HLSL: "#aace60", Batchfile: "#C1F12E", TypeScript: "#3178c6", Shell: "#89e051" };
+    const COLORS = { Python: "#3572A5", JavaScript: "#f1e05a", CSS: "#663399", HTML: "#e34c26", Java: "#b07219", "C#": "#178600", ShaderLab: "#222c37", HLSL: "#aace60", Batchfile: "#C1F12E", TypeScript: "#3178c6", Shell: "#89e051", Rust: "#dea584" };
     const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     /* ---------- Lluvia de caracteres ---------- */
@@ -347,7 +358,7 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
 
     /* ---------- Texto que se escribe solo ---------- */
     (() => {
-      const roles = ["Security Tools Developer", "Web Security Auditor", "Python · FastAPI · OWASP", "Blue Team en formación"];
+      const roles = ["Estudiante de Ciberseguridad", "Auditoría de seguridad web", "Análisis forense", "Desarrollador de software"];
       const el = document.getElementById("typed");
       let r = 0, i = 0, del = false;
       const tick = () => {
@@ -394,14 +405,14 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
         <i class="corner tl"></i><i class="corner br"></i><div class="scan"></div>
         <div class="card-top"><span>~/repos/${repo.name.toLowerCase()}</span>
           <span class="badge ${type}">${type === "sec" ? "SECURITY" : "DEV"}</span></div>
-        <h3><span class="icon">${x.icon || "❯"}</span>${repo.name}</h3>
+        <h3><span class="icon">${x.icon || "❯"}</span>${x.title || repo.name}</h3>
         <p>${x.description || repo.description || "Proyecto sin descripción todavía."}</p>
         ${x.features ? `<ul class="features">${x.features.map(f => `<li>${f}</li>`).join("")}</ul>` : ""}
         ${entries.length ? `<div class="langbar">${entries.map(([l, v]) => `<span style="width:${v / total * 100}%;background:${COLORS[l] || "#00ff9c"}"></span>`).join("")}</div>
         <div class="langs">${entries.map(([l, v]) => `<span><b style="background:${COLORS[l] || "#00ff9c"}"></b>${l} ${(v / total * 100).toFixed(1)}%</span>`).join("")}</div>` : ""}
         <div class="card-foot">
           <span>★ ${repo.stargazers_count} · act. ${fmtDate(repo.pushed_at)}</span>
-          <span class="links">${repo.homepage && !isPortfolio(repo.homepage) ? `<a href="${repo.homepage}" target="_blank" rel="noopener">demo ↗</a>` : ""}<a href="${repo.html_url}" target="_blank" rel="noopener">código ↗</a></span>
+          <span class="links">${repo.homepage && !isPortfolio(repo.homepage) ? `<a href="${repo.homepage}" target="_blank" rel="noopener">web ↗</a>` : ""}<a href="${repo.html_url}" target="_blank" rel="noopener">código ↗</a></span>
         </div>`;
       el.addEventListener("pointermove", e => {
         const b = el.getBoundingClientRect(), px = (e.clientX - b.left) / b.width, py = (e.clientY - b.top) / b.height;
@@ -434,6 +445,8 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
         repos = (await res.json()).filter(r => !r.fork && !r.archived && !HIDDEN.includes(r.name.toLowerCase()));
       } catch { repos = FALLBACK; }
       if (!repos.length) repos = FALLBACK;
+      const rank = r => { const i = ORDER.indexOf(r.name.toLowerCase()); return i < 0 ? ORDER.length : i; };
+      repos.sort((a, b) => rank(a) - rank(b) || new Date(b.pushed_at) - new Date(a.pushed_at));
 
       const langSets = await Promise.all(repos.map(async r => {
         if (EXTRA[r.name]?.languages) return EXTRA[r.name].languages;
