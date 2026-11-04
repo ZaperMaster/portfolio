@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ZaperMaster // Proyectos</title>
-  <meta name="description" content="Portfolio de Alejandro Zapata (ZaperMaster): proyectos de ciberseguridad y desarrollo, como Lumen Office y WebAudit-Sec.">
+  <meta name="description" content="Portfolio de Alejandro Zapata (ZaperMaster): proyectos de ciberseguridad y desarrollo, como Lumen Office, WebAudit-Sec y ForensiX Hash.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23050a0e'/><path d='M8 10l6 6-6 6M16 22h8' stroke='%2300ff9c' stroke-width='3' fill='none' stroke-linecap='round'/></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;800&family=Orbitron:wght@600;900&display=swap" rel="stylesheet">
@@ -307,6 +307,12 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
         features: ["Cabeceras: CSP, HSTS, CORS, Permissions-Policy…", "Cookies, TLS, certificados y revocación OCSP/CRL", "DNS y correo: SPF, DMARC, CAA", "Archivos expuestos (.git, .env, backups…)", "Informes en PDF, HTML, JSON o CSV"],
         languages: { Python: 154028, JavaScript: 75607, CSS: 14486, HTML: 7067, Batchfile: 1134 }
       },
+      "ForensiX-Hash": {
+        type: "sec", icon: "#", title: "ForensiX Hash",
+        description: "Herramienta forense de código abierto: calcula y verifica los hashes de archivos, carpetas y discos completos y guarda un informe PDF firmado. Instalador para Windows, web local (FastAPI) y línea de comandos.",
+        features: ["Discos sector a sector, imágenes .dd y lectura de E01", "MD5, SHA-1, SHA-256, SHA-512, SHA3 y BLAKE2 a la vez", "Verificación automática con una segunda lectura", "Informe PDF con firma Ed25519 y sello de tiempo RFC 3161", "Cadena de custodia y actualizaciones firmadas"],
+        languages: {"Python": 170415, "JavaScript": 56044, "CSS": 24416, "HTML": 20398, "Inno Setup": 3459, "Batchfile": 2805}
+      },
       "Hexagonia": {
         type: "dev", icon: "⬢",
         description: "Juego multijugador en 3D hecho en equipo con Unity y Photon PUN 2: carreras de obstáculos online en las que los jugadores compiten por llegar a la meta de cada nivel.",
@@ -327,9 +333,10 @@ estado  → <span class="p">abierto a colaborar en proyectos de seguridad</span>
       }
     };
     // Proyectos principales: siempre primero y en este orden
-    const ORDER = ["lumen-office", "webaudit-sec"];
+    const ORDER = ["lumen-office", "webaudit-sec", "forensix-hash"];
     const FALLBACK = [
       { name: "lumen-office", html_url: `https://github.com/${USER}/lumen-office`, language: "TypeScript", stargazers_count: 0, pushed_at: "2026-11-02T13:00:00Z", homepage: "https://zapermaster.github.io/lumen-office/" },
+      { name: "ForensiX-Hash", html_url: `https://github.com/${USER}/ForensiX-Hash`, language: "Python", stargazers_count: 0, pushed_at: "2026-11-04T09:00:00Z", homepage: "https://zapermaster.github.io/ForensiX-Hash/" },
       { name: "Hexagonia", html_url: `https://github.com/${USER}/Hexagonia`, language: "C#", stargazers_count: 0, pushed_at: "2026-10-26T13:20:47Z", homepage: "" },
       { name: "GestionAulas", html_url: `https://github.com/${USER}/GestionAulas`, language: "HTML", stargazers_count: 0, pushed_at: "2026-10-26T10:58:24Z", homepage: "" },
       { name: "WebAudit-Sec", html_url: `https://github.com/${USER}/WebAudit-Sec`, language: "Python", stargazers_count: 0, pushed_at: "2026-10-23T13:34:54Z", homepage: "" },
