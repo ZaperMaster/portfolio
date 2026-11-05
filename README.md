@@ -1,6 +1,6 @@
 # Alejandro Zapata · Portfolio
 
-[![Web](https://img.shields.io/badge/web-zapermaster.github.io-121315?style=flat-square&logo=githubpages&logoColor=white)](https://zapermaster.github.io/web/)
+[![Web](https://img.shields.io/badge/web-zapermaster.github.io%2Fportfolio-121315?style=flat-square&logo=githubpages&logoColor=white)](https://zapermaster.github.io/portfolio/)
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-663399?style=flat-square&logo=css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -8,7 +8,7 @@
 Mi portfolio personal. Muestra mis proyectos públicos de GitHub **en directo**: si publico un
 repositorio nuevo, aparece solo en la web.
 
-👉 **https://zapermaster.github.io/web/**
+👉 **https://zapermaster.github.io/portfolio/**
 
 <p align="center">
   <img src="docs/portada.png" alt="Portada del portfolio" width="900">
