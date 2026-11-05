@@ -14,7 +14,7 @@ repositorio nuevo, aparece solo en la web.
   <img src="docs/portada.png" alt="Portada del portfolio" width="900">
 </p>
 
-| Proyectos | Móvil |
+| Modo oscuro | Móvil |
 |---|---|
 | ![Proyectos principales](docs/proyectos.png) | <img src="docs/movil.png" alt="Portfolio en el móvil" width="220"> |
 
@@ -33,7 +33,9 @@ repositorio nuevo, aparece solo en la web.
 ## Detalles
 
 - **Sin frameworks ni dependencias**: un único `index.html` con HTML, CSS y JavaScript.
-- **Diseño oscuro y minimalista**, con un único color de acento y animaciones discretas.
+- **Modo claro y oscuro**: sigue la configuración del sistema y se puede cambiar con el botón de la
+  barra superior, que recuerda la elección.
+- **Diseño minimalista**, con un único color de acento y animaciones discretas.
 - **Adaptada al móvil** y respetuosa con `prefers-reduced-motion`.
 - Publicada con **GitHub Pages** desde la rama `main`.
 

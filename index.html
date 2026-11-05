@@ -5,23 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Alejandro Zapata · Ciberseguridad y desarrollo de software</title>
   <meta name="description" content="Portfolio de Alejandro Zapata: graduado en DAM y especializado en ciberseguridad. Proyectos como Lumen Office, WebAudit-Sec y ForensiX Hash.">
-  <meta name="theme-color" content="#0c0d0e">
+  <meta name="theme-color" content="#1a1c1f">
+  <script>
+    // Aplica el tema guardado antes de pintar la página
+    try { const t = localStorage.getItem("tema"); if (t) document.documentElement.dataset.theme = t; } catch {}
+  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230c0d0e'/><text x='16' y='21.5' font-family='Consolas,monospace' font-size='15' font-weight='600' text-anchor='middle' fill='%238fd6b4'>AZ</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0c0d0e;
-      --surface: #121315;
-      --ink: #ededec;
-      --muted: #8e9196;
-      --faint: #7a7e84;
-      --line: #232528;
+      --bg: #1a1c1f;
+      --surface: #212428;
+      --ink: #eeeeec;
+      --muted: #a7abb0;
+      --faint: #8d9197;
+      --line: #303338;
+      --line-strong: #474b51;
       --accent: #8fd6b4;
+      --dots: #ffffff12;
       --sans: "Geist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       --mono: "Geist Mono", ui-monospace, Consolas, monospace;
       color-scheme: dark;
+    }
+    /* Modo claro: por elección del visitante o, si no ha elegido, según su sistema */
+    :root[data-theme="light"] {
+      --bg: #f6f6f3;
+      --surface: #ffffff;
+      --ink: #1a1c1f;
+      --muted: #5a5e64;
+      --faint: #70747a;
+      --line: #e2e2dd;
+      --line-strong: #c4c4bd;
+      --accent: #1c7a53;
+      --dots: #00000014;
+      color-scheme: light;
+    }
+    @media (prefers-color-scheme: light) {
+      :root:not([data-theme="dark"]) {
+        --bg: #f6f6f3;
+        --surface: #ffffff;
+        --ink: #1a1c1f;
+        --muted: #5a5e64;
+        --faint: #70747a;
+        --line: #e2e2dd;
+        --line-strong: #c4c4bd;
+        --accent: #1c7a53;
+        --dots: #00000014;
+        color-scheme: light;
+      }
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -35,7 +68,7 @@
     /* Trama de puntos muy tenue en la parte superior */
     body::before {
       content: ""; position: absolute; inset: 0 0 auto; height: 640px; z-index: -1; pointer-events: none;
-      background-image: radial-gradient(#ffffff14 1px, transparent 1px);
+      background-image: radial-gradient(var(--dots) 1px, transparent 1px);
       background-size: 24px 24px;
       mask-image: linear-gradient(#000, transparent);
     }
@@ -54,7 +87,14 @@
     }
     .site-head .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
     .site-name { font: 500 14px/1 var(--mono); text-decoration: none; white-space: nowrap; }
-    .site-nav { display: flex; gap: clamp(14px, 3vw, 28px); }
+    .site-nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); }
+    .theme-toggle {
+      display: grid; place-items: center; width: 34px; height: 34px; padding: 0;
+      background: none; border: 1px solid var(--line); border-radius: 6px; color: var(--muted); cursor: pointer;
+      transition: color .15s, border-color .15s;
+    }
+    .theme-toggle:hover { color: var(--ink); border-color: var(--line-strong); }
+    .theme-toggle svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
     .site-nav a { font: 400 13.5px/1 var(--mono); color: var(--muted); text-decoration: none; transition: color .15s; }
     .site-nav a:hover { color: var(--ink); }
 
@@ -103,7 +143,7 @@
       transition: border-color .2s;
       animation: rise .5s ease both;
     }
-    .project:hover, .other:hover { border-color: #3a3d41; }
+    .project:hover, .other:hover { border-color: var(--line-strong); }
     @keyframes rise { from { opacity: 0; transform: translateY(8px); } }
     .project { padding: clamp(20px, 3vw, 28px); }
     .project-top { display: flex; justify-content: space-between; gap: 12px; font: 400 12.5px/1.4 var(--mono); color: var(--faint); margin-bottom: 14px; }
@@ -152,8 +192,9 @@
     @media (max-width: 480px) {
       /* El nombre ya está en la portada: en móvil la barra deja sitio al menú */
       .site-name { display: none; }
-      .site-head .wrap { justify-content: flex-start; height: 54px; }
-      .site-nav { gap: 22px; }
+      .site-head .wrap { height: 54px; }
+      .site-nav { width: 100%; gap: 18px; }
+      .theme-toggle { margin-left: auto; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -169,6 +210,9 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#tecnologias">Tecnologías</a>
         <a href="#contacto">Contacto</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Cambiar entre modo claro y oscuro" title="Cambiar entre modo claro y oscuro">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor" stroke="none"/></svg>
+        </button>
       </nav>
     </div>
   </header>
@@ -372,6 +416,19 @@
     load();
 
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Selector de modo claro/oscuro; la elección se recuerda en este navegador
+    const root = document.documentElement;
+    const themeColor = document.querySelector('meta[name="theme-color"]');
+    const currentTheme = () => root.dataset.theme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    const paintBar = () => themeColor.content = getComputedStyle(root).getPropertyValue("--bg").trim();
+    paintBar();
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      const next = currentTheme() === "light" ? "dark" : "light";
+      root.dataset.theme = next;
+      try { localStorage.setItem("tema", next); } catch {}
+      paintBar();
+    });
   </script>
 </body>
 </html>
