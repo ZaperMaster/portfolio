@@ -1,6 +1,6 @@
 # Alejandro Zapata · Portfolio
 
-[![Web](https://img.shields.io/badge/web-zapermaster.github.io-0f5c63?style=flat-square&logo=githubpages&logoColor=white)](https://zapermaster.github.io/web/)
+[![Web](https://img.shields.io/badge/web-zapermaster.github.io-121315?style=flat-square&logo=githubpages&logoColor=white)](https://zapermaster.github.io/web/)
 ![HTML](https://img.shields.io/badge/HTML-E34F26?style=flat-square&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-663399?style=flat-square&logo=css&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
@@ -14,9 +14,9 @@ repositorio nuevo, aparece solo en la web.
   <img src="docs/portada.png" alt="Portada del portfolio" width="900">
 </p>
 
-| Proyectos | Modo oscuro | Móvil |
-|---|---|---|
-| ![Proyectos principales](docs/proyectos.png) | ![Portada en modo oscuro](docs/oscuro.png) | <img src="docs/movil.png" alt="Portfolio en el móvil" width="220"> |
+| Proyectos | Móvil |
+|---|---|
+| ![Proyectos principales](docs/proyectos.png) | <img src="docs/movil.png" alt="Portfolio en el móvil" width="220"> |
 
 ## Cómo funciona
 
@@ -33,7 +33,7 @@ repositorio nuevo, aparece solo en la web.
 ## Detalles
 
 - **Sin frameworks ni dependencias**: un único `index.html` con HTML, CSS y JavaScript.
-- **Tema claro y oscuro** automático, según la configuración del sistema.
+- **Diseño oscuro y minimalista**, con un único color de acento y animaciones discretas.
 - **Adaptada al móvil** y respetuosa con `prefers-reduced-motion`.
 - Publicada con **GitHub Pages** desde la rama `main`.
 
