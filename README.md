@@ -24,7 +24,7 @@ repositorio nuevo, aparece solo en la web.
   sus lenguajes, su fecha de actualización y sus enlaces.
 - Los proyectos de `ORDER` aparecen primero, en grande. El resto va a "Otros proyectos".
 - Los proyectos destacados tienen una ficha propia (descripción, funcionalidades y tipo Seguridad o
-  Desarrollo) definida en el objeto `EXTRA` de `index.html`. Los demás usan la descripción que tengan
+  Desarrollo) definida en el objeto `EXTRA` de `app.js`. Los demás usan la descripción que tengan
   en GitHub.
 - Si la API no responde (por ejemplo, por el límite de peticiones), se muestran los datos guardados
   en `FALLBACK`, así que la web nunca se queda vacía.
@@ -32,7 +32,11 @@ repositorio nuevo, aparece solo en la web.
 
 ## Detalles
 
-- **Sin frameworks ni dependencias**: un único `index.html` con HTML, CSS y JavaScript.
+- **Sin frameworks ni dependencias**: HTML, CSS y JavaScript (`index.html`, `estilos.css`, `app.js` y
+  `tema.js`).
+- **Content-Security-Policy estricta**: sin código en línea; solo se permiten los archivos propios, la
+  API de GitHub y Google Fonts.
+- **Vista previa** al compartir el enlace (Open Graph).
 - **Modo claro y oscuro**: sigue la configuración del sistema y se puede cambiar con el botón de la
   barra superior, que recuerda la elección.
 - **Diseño minimalista**, con un único color de acento y animaciones discretas.
@@ -42,7 +46,7 @@ repositorio nuevo, aparece solo en la web.
 ## Añadir o cambiar un proyecto
 
 1. Haz público el repositorio en GitHub: aparecerá automáticamente.
-2. Para darle una ficha propia, añádelo a `EXTRA` en `index.html`:
+2. Para darle una ficha propia, añádelo a `EXTRA` en `app.js`:
 
    ```js
    "MiProyecto": {
@@ -61,6 +65,10 @@ python -m http.server 8000
 ```
 
 Y abre <http://localhost:8000>.
+
+## Licencia
+
+[MIT](LICENSE).
 
 ## Autor
 
